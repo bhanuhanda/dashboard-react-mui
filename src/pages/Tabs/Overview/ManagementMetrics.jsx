@@ -5,9 +5,9 @@ import { BarChart, Gauge, gaugeClasses, PieChart } from '@mui/x-charts';
 
 const ManagementMetrics = () => {
   return (
-    <Grid2>
-      <Grid2 container spacing={2} mt={2} height={'300px'}>
-        <Grid2 size={{ xs: 12, md: 6 }}>
+    <Grid2 size={12}>
+      <Grid2 container spacing={2} mt={2} minHeight={'300px'}>
+        <Grid2 size={{ xs: 12, lg: 6 }}>
           <Stack direction={'row'} gap={2}>
             <StatCardView
               heading={'Forms Filled'}
@@ -38,7 +38,7 @@ const ManagementMetrics = () => {
           </Stack>
         </Grid2>
         <Grid2
-          size={{ xs: 12, md: 6 }}
+          size={{ xs: 12, lg: 6 }}
           sx={{ display: 'flex', flexDirection: 'column', height: '100%' }}
         >
           <Paper sx={{ p: 2, flex: 1 }}>
@@ -58,14 +58,14 @@ const ManagementMetrics = () => {
                   ],
                 },
               ]}
-              height={243}
+              height={245}
             />
           </Paper>
         </Grid2>
       </Grid2>
-      <Grid2 container spacing={2} mt={2} height={'300px'}>
+      <Grid2 container spacing={2} mt={2} minHeight={'300px'}>
         <Grid2
-          size={{ xs: 12, md: 6 }}
+          size={{ xs: 12, lg: 6 }}
           sx={{ display: 'flex', flexDirection: 'column', height: '100%' }}
         >
           <Paper sx={{ p: 2, flex: 1 }}>
@@ -87,7 +87,7 @@ const ManagementMetrics = () => {
           </Paper>
         </Grid2>
         <Grid2
-          size={{ xs: 12, md: 6 }}
+          size={{ xs: 12, lg: 6 }}
           sx={{ display: 'flex', flexDirection: 'column', height: '100%' }}
         >
           <Paper sx={{ p: 2, flex: 1 }}>
@@ -107,7 +107,7 @@ const ManagementMetrics = () => {
                   transform: 'translate(0px, -20px)',
                 },
                 [`& .${gaugeClasses.valueArc}`]: {
-                  fill: theme.palette.brand.pink,
+                  fill: theme.palette.brand.violet,
                 },
               })}
               text={() => `1\nTotal Tasks`}

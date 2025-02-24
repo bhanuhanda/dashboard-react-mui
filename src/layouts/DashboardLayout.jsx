@@ -13,8 +13,6 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import Divider from '@mui/material/Divider';
 import MenuIcon from '@mui/icons-material/Menu';
-import useMediaQuery from '@mui/material/useMediaQuery';
-import { useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import { Button, FormControl, MenuItem, Popover, Select } from '@mui/material';
 import { jwtDecode } from 'jwt-decode';
@@ -36,6 +34,7 @@ import ChatIcon from '@mui/icons-material/Chat';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import Badge from '@mui/material/Badge';
+import useIsMobile from '../hooks/useScreenSize';
 
 const drawerWidth = 280;
 
@@ -67,8 +66,7 @@ const navItems = [
 ];
 
 export default function DashboardLayout() {
-  const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+  const isMobile = useIsMobile();
   const [userEmail, setUserEmail] = useState('');
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -154,7 +152,7 @@ export default function DashboardLayout() {
   return (
     <div style={{ display: 'flex' }}>
       <AppBar position="fixed">
-        <Toolbar>
+        <Toolbar sx={{ width: '100vw' }}>
           {isMobile && (
             <IconButton
               color="inherit"

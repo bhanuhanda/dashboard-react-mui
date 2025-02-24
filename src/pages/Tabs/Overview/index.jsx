@@ -14,11 +14,11 @@ export default function OverviewTab() {
       <AttendanceMetrics />
 
       {/* tables row */}
-      <Grid2 container spacing={2} sx={{ mt: 2 }}>
-        <Grid2 size={{ xs: 12, md: 6 }}>
+      <Grid2 container spacing={2} sx={{ mt: 2 }} size={12}>
+        <Grid2 size={{ xs: 12, lg: 6 }}>
           <CustomTable heading={'Employee (9)'} data={employeesData} />
         </Grid2>
-        <Grid2 size={{ xs: 12, md: 6 }}>
+        <Grid2 size={{ xs: 12, lg: 6 }}>
           <CustomTable heading={'Off Duty Employees (1)'} data={offDutyData} />
         </Grid2>
       </Grid2>

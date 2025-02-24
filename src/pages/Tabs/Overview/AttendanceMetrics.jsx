@@ -1,15 +1,23 @@
 import { Box, Divider, Grid2, Paper, Typography } from '@mui/material';
 import { Gauge, gaugeClasses } from '@mui/x-charts';
 import React from 'react';
+import useIsMobile from '../../../hooks/useScreenSize';
 
 const AttendanceMetrics = () => {
   const punchedIn = 3;
   const totalEmployees = 9;
 
+  const isMobile = useIsMobile();
+
   return (
-    <Grid2 container sx={{ height: '338px' }} spacing={2}>
+    <Grid2
+      container
+      spacing={2}
+      direction={isMobile ? 'column' : 'row'}
+      sx={{ height: isMobile ? '676px' : '338px' }}
+    >
       {/* stats - left column */}
-      <Grid2 size={{ xs: 12, md: 6 }}>
+      <Grid2 size={{ xs: 12, lg: 6 }} sx={{ flex: 1 }}>
         <Typography variant="h4" sx={{ mb: 2, fontWeight: 'bold' }}>
           Realtime Dashboard
         </Typography>
@@ -36,7 +44,7 @@ const AttendanceMetrics = () => {
                       transform: 'translate(0px, -20px)',
                     },
                     [`& .${gaugeClasses.valueArc}`]: {
-                      fill: theme.palette.brand.pink,
+                      fill: theme.palette.brand.green,
                     },
                   })}
                   text={() => `${totalEmployees}\nAll Employees`}
@@ -71,12 +79,16 @@ const AttendanceMetrics = () => {
 
       {/* attendance - right column */}
       <Grid2
-        size={{ xs: 12, md: 6 }}
-        sx={{ display: 'flex', flexDirection: 'column', height: '100%' }}
+        size={{ xs: 12, lg: 6 }}
+        sx={{ display: 'flex', flexDirection: 'column', flex: 1 }}
       >
         <Typography
           variant="h4"
-          sx={{ mb: 2, fontWeight: 'bold', textAlign: 'right' }}
+          sx={{
+            mb: 2,
+            fontWeight: 'bold',
+            textAlign: isMobile ? 'left' : 'right',
+          }}
         >
           Attendance Status
         </Typography>

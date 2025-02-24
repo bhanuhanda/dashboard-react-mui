@@ -19,7 +19,7 @@ const StatCardView = ({
         </Typography>
         <Typography
           variant="h6"
-          sx={(theme) => ({ color: theme.palette.brand.pink })}
+          sx={(theme) => ({ color: theme.palette.brand.main })}
         >
           <ArrowUpwardIcon sx={{ fontSize: 14 }} />
           {`${increasePercentage}%`}
