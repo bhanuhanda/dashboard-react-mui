@@ -8,7 +8,7 @@ import GenericPage from './pages/GenericPage';
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/dashboard-react-mui">
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route
