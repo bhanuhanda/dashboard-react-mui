@@ -153,19 +153,18 @@ export default function DashboardLayout() {
     <div style={{ display: 'flex' }}>
       <AppBar position="fixed">
         <Toolbar sx={{ width: '100vw' }}>
-          {isMobile && (
-            <IconButton
-              color="inherit"
-              edge="start"
-              onClick={handleDrawerToggle}
-              sx={{ mr: 2 }}
-            >
-              <MenuIcon />
-            </IconButton>
-          )}
-          <Typography variant="h6" noWrap sx={{ flexGrow: 1 }}>
-            Dashboard
-          </Typography>
+          <Box sx={{ flexGrow: 1 }}>
+            {isMobile && (
+              <IconButton
+                color="inherit"
+                edge="start"
+                onClick={handleDrawerToggle}
+                sx={{ mr: 2 }}
+              >
+                <MenuIcon />
+              </IconButton>
+            )}
+          </Box>
 
           {/* Right-side Icons */}
           <IconButton

@@ -2,6 +2,7 @@ import { Box, Divider, Grid2, Paper, Typography } from '@mui/material';
 import { Gauge, gaugeClasses } from '@mui/x-charts';
 import React from 'react';
 import useIsMobile from '../../../hooks/useScreenSize';
+import { attendanceData } from '../../../constants';
 
 const AttendanceMetrics = () => {
   const punchedIn = 3;
@@ -99,9 +100,30 @@ const AttendanceMetrics = () => {
           </Typography>
           <Divider />
           <Box sx={{ mt: 1 }}>
-            <Typography variant="body2">Bond: 2</Typography>
-            <Typography variant="body2">default: 0</Typography>
-            <Typography variant="body2">Om Bhagwan: 1</Typography>
+            {attendanceData.map((data) => {
+              return (
+                <Grid2
+                  container
+                  direction={'row'}
+                  sx={{
+                    display: 'flex',
+                    justifyContent: 'space-between',
+                    textAlign: 'left',
+                    mt: 1,
+                  }}
+                >
+                  <Typography variant="body1" sx={{ minWidth: '70%' }}>
+                    {data.name}
+                  </Typography>
+                  <Typography variant="body1" color="success">
+                    {data.present}
+                  </Typography>
+                  <Typography variant="body1" color="error">
+                    {data.absent}
+                  </Typography>
+                </Grid2>
+              );
+            })}
           </Box>
         </Paper>
       </Grid2>

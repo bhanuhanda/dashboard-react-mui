@@ -83,6 +83,24 @@ export const offDutyData = [
   },
 ];
 
+export const attendanceData = [
+  {
+    name: 'Bond',
+    present: 0,
+    absent: 1,
+  },
+  {
+    name: 'default',
+    present: 2,
+    absent: 5,
+  },
+  {
+    name: 'Om Bhagwan',
+    present: 1,
+    absent: 0,
+  },
+];
+
 function TabPage({ tabTitle }) {
   return <Box sx={{ p: 2 }}>{tabTitle} content goes here</Box>;
 }

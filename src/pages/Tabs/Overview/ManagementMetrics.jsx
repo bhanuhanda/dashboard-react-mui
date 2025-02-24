@@ -50,14 +50,23 @@ const ManagementMetrics = () => {
               sx={{ mt: 2 }}
               series={[
                 {
+                  cx: '30%',
                   data: [
                     { id: 0, value: 100, label: 'Pending Expenses' },
                     { id: 1, value: 0, label: 'Approved Expenses' },
                     { id: 2, value: 0, label: 'Rejected Expenses' },
                     { id: 3, value: 0, label: 'Paid Out' },
                   ],
+                  outerRadius: '75%',
                 },
               ]}
+              slotProps={{
+                legend: {
+                  position: {
+                    horizontal: 'right',
+                  },
+                },
+              }}
               height={245}
             />
           </Paper>
