@@ -39,6 +39,7 @@ const theme = createTheme({
     brand: {
       main: '#1976d2',
       contrastText: '#ffffff',
+      pink: '#FE65FD',
     },
   },
   typography: {
